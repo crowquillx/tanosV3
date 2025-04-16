@@ -55,7 +55,8 @@ in {
         "nm-applet --indicator"
         "pypr &"
         "sleep 1.5 && swww img ${stylixImage}"
-        "vesktop --ozone-platform-hint=auto"
+        "vesktop --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland"
+        "spotify --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland"
       ];
 
       input = {

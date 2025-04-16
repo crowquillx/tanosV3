@@ -12,6 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  boot.supportedFilesystems = [ "ntfs" "ntfs3g" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/0a623ef8-8a9a-4fb6-bca4-f74c8566bd90";
@@ -22,6 +23,11 @@
     { device = "/dev/disk/by-uuid/C44A-8DAB";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
+    };
+
+  fileSystems."/home/tan/mnt/games" =
+    { device = "/dev/disk/by-uuid/a93a28c3-8538-45f9-9031-1d740a0993f1";
+      fsType = "ext4";
     };
 
   swapDevices = [ ];
