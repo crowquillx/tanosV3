@@ -54,6 +54,8 @@
       ll = "eza --icons -lh --group-directories-first -1 --no-user --long";
       la = "eza --icons -lah --group-directories-first -1";
       tree = "eza --icons --tree --group-directories-first";
+      winblows = "systemctl reboot --boot-loader-entry=auto-windows";
+      enterbios = "systemctl reboot --boot-loader-entry=auto-reboot-to-firmware-setup";
     };
   };
 }
