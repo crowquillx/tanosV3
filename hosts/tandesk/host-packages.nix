@@ -7,5 +7,7 @@
     vscode
     direnv
     inputs.zen-browser.packages."${system}".default
+    spotify
+    blender
   ];
 }

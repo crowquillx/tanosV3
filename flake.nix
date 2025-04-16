@@ -9,13 +9,16 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nvf.url = "github:notashelf/nvf";
     stylix.url = "github:danth/stylix";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = {nixpkgs, ...} @ inputs: let
+  outputs = {nixpkgs, lanzaboote, ...} @ inputs: let
     system = "x86_64-linux";
     host = "tandesk";
     profile = "amd";
@@ -29,8 +32,12 @@
           inherit username;
           inherit host;
           inherit profile;
+          lanzaboote = lanzaboote;
         };
-        modules = [./profiles/amd];
+        modules = [
+          ./profiles/amd
+          lanzaboote.nixosModules.lanzaboote
+          ];
       };
       nvidia = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -39,6 +46,7 @@
           inherit username;
           inherit host;
           inherit profile;
+          lanzaboote = lanzaboote;
         };
         modules = [./profiles/nvidia];
       };

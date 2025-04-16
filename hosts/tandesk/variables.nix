@@ -1,7 +1,7 @@
 {
   # Git Configuration ( For Pulling Software Repos )
-  gitUsername = "Tyler Kelley";
-  gitEmail = "tylerzanekelley@gmail.com";
+  gitUsername = "tan";
+  gitEmail = "tancodes@proton.me";
 
   # Hyprland Settings
   extraMonitorSettings = "
@@ -30,7 +30,7 @@ monitor=HDMI-A-1,disabled";
   printEnable = false;
 
   # Set Stylix Image
-  stylixImage = ../../wallpapers/AnimeGirlNightSky.jpg;
+  stylixImage = ../../wallpapers/wp.png;
 
   # Set Waybar
   # Includes alternates such as waybar-curved.nix & waybar-ddubs.nix
