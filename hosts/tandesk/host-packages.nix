@@ -9,5 +9,8 @@
     inputs.zen-browser.packages."${system}".default
     spotify
     blender
+    devenv
+    (python3.withPackages (ps: [ ps.psutil ]) )
+    mkvtoolnix
   ];
 }
