@@ -33,6 +33,7 @@
           inherit host;
           inherit profile;
           lanzaboote = lanzaboote;
+          programs.nix-ld.enable = true;
         };
         modules = [
           ./profiles/amd

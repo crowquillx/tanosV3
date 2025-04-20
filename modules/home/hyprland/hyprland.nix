@@ -55,7 +55,7 @@ in {
         "nm-applet --indicator"
         "pypr &"
         "sleep 1.5 && swww img ${stylixImage}"
-        "vesktop --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland"
+        "legcord --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland"
         "spotify --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland"
       ];
 

@@ -12,7 +12,7 @@ in {
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = false;
-    backupFileExtension = "backup";
+    backupFileExtension = "backup";  # Removed duplicate entry
     extraSpecialArgs = {inherit inputs username host profile;};
     users.${username} = {
       imports = [./../home];
@@ -22,8 +22,27 @@ in {
         stateVersion = "23.11";
       };
       programs.home-manager.enable = true;
+      
+      # Adding xdg-user-dirs configuration
+      xdg = {
+        enable = true;
+        userDirs = {
+          enable = true;
+          createDirectories = true;  # Set to false if you don't want auto-creation
+          # Optional: customize directory locations
+          # desktop = "$HOME/Desktop";
+          # documents = "$HOME/Documents";
+          # download = "$HOME/Downloads";
+          # music = "$HOME/Music";
+          # pictures = "$HOME/Pictures";
+          # publicShare = "$HOME/Public";
+          # templates = "$HOME/Templates";
+          # videos = "$HOME/Videos";
+        };
+      };
     };
   };
+  
   users.mutableUsers = true;
   users.users.${username} = {
     isNormalUser = true;

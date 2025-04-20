@@ -74,7 +74,7 @@ in {
         "noblur, tag:games*"
         "fullscreen, tag:games*"
         "workspace 2, title:^(Spotify)(.*)$"
-        "workspace 3, class:^(vesktop)$"
+        "workspace 3, class:^(legcord)$"
       ];
 
       env = [

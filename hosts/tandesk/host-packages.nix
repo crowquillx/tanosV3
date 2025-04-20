@@ -1,7 +1,7 @@
 {pkgs, inputs, ...}: {
   environment.systemPackages = with pkgs; [
     audacity
-    vesktop
+    legcord
     nodejs
     obs-studio
     vscode
@@ -10,6 +10,7 @@
     spotify
     blender
     devenv
+    vivaldi
     (python3.withPackages (ps: [ ps.psutil ]) )
     mkvtoolnix
   ];

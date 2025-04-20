@@ -78,6 +78,7 @@ in {
       "$modifier CONTROL,left,workspace,e-1"
       "$modifier,mouse_down,workspace, e+1"
       "$modifier,mouse_up,workspace, e-1"
+      ",mouse:276,exec,notify-send 'toggle mute' && wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
       "ALT,Tab,cyclenext"
       "ALT,Tab,bringactivetotop"
       ",XF86AudioRaiseVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
