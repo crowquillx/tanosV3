@@ -11,7 +11,6 @@
     blender
     devenv
     vivaldi
-    (python3.withPackages (ps: [ ps.psutil ]) )
     mkvtoolnix
   ];
 }

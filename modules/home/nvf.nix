@@ -6,7 +6,7 @@
   imports = [inputs.nvf.homeManagerModules.default];
 
   programs.nvf = {
-    enable = false;
+    enable = true;
 
     settings.vim = {
       vimAlias = true;
@@ -91,7 +91,6 @@
         trouble.enable = true;
         lspSignature.enable = true;
         otter-nvim.enable = false;
-        lsplines.enable = false;
         nvim-docs-view.enable = false;
       };
 

@@ -42,6 +42,7 @@
 
     shellAliases = {
       sv = "sudo nvim";
+      tanime = "ssh tan@192.168.0.112";
       v = "nvim";
       c = "clear";
       fr = "nh os switch --hostname ${profile}";

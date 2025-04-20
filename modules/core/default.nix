@@ -10,6 +10,7 @@
     ./nh.nix
     ./packages.nix
     ./printing.nix
+    ./python.nix
     ./security.nix
     ./services.nix
     ./starfish.nix
