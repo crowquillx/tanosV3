@@ -12,5 +12,6 @@
     devenv
     vivaldi
     mkvtoolnix
+    aegisub
   ];
 }
