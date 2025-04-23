@@ -50,28 +50,28 @@ fi
 echo "-----"
 
 backupname=$(date "+%Y-%m-%d-%H-%M-%S")
-if [ -d "zaneyos" ]; then
-  echo "ZaneyOS exists, backing up to .config/zaneyos-backups folder."
-  if [ -d ".config/zaneyos-backups" ]; then
-    echo "Moving current version of ZaneyOS to backups folder."
-    mv "$HOME"/zaneyos .config/zaneyos-backups/"$backupname"
+if [ -d "tanos" ]; then
+  echo "tanOS exists, backing up to .config/tanos-backups folder."
+  if [ -d ".config/tanos-backups" ]; then
+    echo "Moving current version of tanOS to backups folder."
+    mv "$HOME"/tanos .config/tanos-backups/"$backupname"
     sleep 1
   else
-    echo "Creating the backups folder & moving ZaneyOS to it."
-    mkdir -p .config/zaneyos-backups
-    mv "$HOME"/zaneyos .config/zaneyos-backups/"$backupname"
+    echo "Creating the backups folder & moving tanOS to it."
+    mkdir -p .config/tanos-backups
+    mv "$HOME"/tanos .config/tanos-backups/"$backupname"
     sleep 1
   fi
 else
-  echo "Thank you for choosing ZaneyOS."
+  echo "Thank you for choosing tanOS."
   echo "I hope you find your time here enjoyable!"
 fi
 
 echo "-----"
 
-echo "Cloning & Entering ZaneyOS Repository"
-git clone https://gitlab.com/zaney/zaneyos.git
-cd zaneyos || exit
+echo "Cloning & Entering tanOS Repository"
+git clone https://github.com/crowquillx/tanosV3.git
+cd tanos || exit
 mkdir hosts/"$hostName"
 cp hosts/default/*.nix hosts/"$hostName"
 installusername=$(echo $USER)
@@ -116,4 +116,4 @@ NIX_CONFIG="experimental-features = nix-command flakes"
 
 echo "-----"
 
-sudo nixos-rebuild switch --flake ~/zaneyos/#${profile}
+sudo nixos-rebuild switch --flake ~/tanos/#${profile}
