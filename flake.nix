@@ -16,9 +16,13 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-ld = {
+      url = "github:Mic92/nix-ld";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {nixpkgs, lanzaboote, ...} @ inputs: let
+  outputs = {nixpkgs, lanzaboote, nix-ld, ...} @ inputs: let
     system = "x86_64-linux";
     host = "tandesk";
     profile = "amd";
@@ -33,11 +37,12 @@
           inherit host;
           inherit profile;
           lanzaboote = lanzaboote;
-          programs.nix-ld.enable = true;
         };
         modules = [
           ./profiles/amd
           lanzaboote.nixosModules.lanzaboote
+           nix-ld.nixosModules.nix-ld
+          { programs.nix-ld.dev.enable = true; }
           ];
       };
       nvidia = nixpkgs.lib.nixosSystem {

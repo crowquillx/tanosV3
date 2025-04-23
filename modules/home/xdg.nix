@@ -15,6 +15,9 @@
         "application/xhtml+xml" = [ "zen-beta.desktop" ];
         "application/x-extension-xhtml" = [ "zen-beta.desktop" ];
         "application/x-extension-xht" = [ "zen-beta.desktop" ];
+        "application/x-subrip" = [ "aegisub.desktop" ];
+        "text/x-ssa" = [ "aegisub.desktop" ];
+        "text/x-ass" = [ "aegisub.desktop" ];
       };
       defaultApplications = {
         "x-scheme-handler/http" = [ "zen-beta.desktop" ];
@@ -27,6 +30,9 @@
         "application/xhtml+xml" = [ "zen-beta.desktop" ];
         "application/x-extension-xhtml" = [ "zen-beta.desktop" ];
         "application/x-extension-xht" = [ "zen-beta.desktop" ];
+        "application/x-subrip" = [ "aegisub.desktop" ];
+        "text/x-ssa" = [ "aegisub.desktop" ];
+        "text/x-ass" = [ "aegisub.desktop" ];
       };
     };
     portal = {

@@ -4,7 +4,7 @@
     legcord
     nodejs
     obs-studio
-    vscode
+    vscode-fhs
     direnv
     inputs.zen-browser.packages."${system}".default
     spotify
