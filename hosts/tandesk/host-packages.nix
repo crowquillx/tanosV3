@@ -1,7 +1,7 @@
 {pkgs, inputs, ...}: {
   environment.systemPackages = with pkgs; [
     audacity
-    legcord
+    vesktop
     nodejs
     obs-studio
     vscode-fhs
@@ -13,5 +13,6 @@
     vivaldi
     mkvtoolnix
     aegisub
+    godot
   ];
 }
