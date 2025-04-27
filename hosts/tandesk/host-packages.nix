@@ -4,7 +4,7 @@
     vesktop
     nodejs
     obs-studio
-    vscode-fhs
+    code-cursor
     direnv
     inputs.zen-browser.packages."${system}".default
     spotify

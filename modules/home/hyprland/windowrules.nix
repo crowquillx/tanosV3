@@ -16,6 +16,8 @@ in {
         "tag +browser, class:^(zen-beta)$"
         "tag +projects, class:^(codium|codium-url-handler|VSCodium)$"
         "tag +projects, class:^(VSCode|code-url-handler)$"
+        "tag +projects, class:^(cursor)$"
+        "tag +projects, class:^(VSCode|code-url-handler)$"
         "tag +im, class:^([Dd]iscord|[Ww]ebCord|[Vv]esktop)$"
         "tag +im, class:^([Ff]erdium)$"
         "tag +im, class:^([Ww]hatsapp-for-linux)$"
