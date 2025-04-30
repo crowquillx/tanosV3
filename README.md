@@ -1,101 +1,78 @@
 <div align="center">
 
-## tanOS
+# 🚀 tanOS
 
-tanOS is my fork of zaneyos that is becoming more divergent over time. This really only exists for me but it seems simpler to keep it public and be able to use the install script. 
-[original project](https://gitlab.com/Zaney/zaneyos).
+> A personalized fork of zaneyos that is becoming more divergent over time. This really only exists for me but it seems simpler to keep it public and be able to use the install script.
 
+[![NixOS](https://img.shields.io/badge/NixOS-23.11+-blue.svg)](https://nixos.org)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-#### Requirements
+</div>
 
-- You must be running on NixOS, version 23.11+. 
-- The `tanos` folder (this repo) is expected to be in your home directory.
-- You must have installed NIXOS using **GPT** parition with booting with **UEFI**.
-- ** 500MB minimum /boot parititon required. **
-- Systemd-boot is all I use, I assume it could be modified to use grub, etc
+## 📋 Requirements
 
-## Installation: 
+- NixOS version 23.11 or higher
+- `tanos` folder (this repo) must be in your home directory
+- GPT partition with UEFI boot
+- Minimum 500MB `/boot` partition
+- Systemd-boot (other bootloaders will require modifications)
 
-<details>
-<summary><strong> ⬇️ Install with script </strong></summary>
+## 🛠️ Installation
 
+### 🚀 Quick Install
 
+1. Install required packages:
+   ```bash
+   nix-shell -p git curl
+   ```
 
-### 📜 Script:
+2. Run the installation script:
+   ```bash
+   sh <(curl -L https://raw.githubusercontent.com/crowquillx/tanosV3/refs/heads/main/install-tanos.sh)
+   ```
 
-This will quickly get you setup with my config. 
+3. Reboot your system after installation completes
 
-Simply copy this and run it:
+### 📝 Manual Installation
 
-```
-nix-shell -p git curl
-```
+1. Install required packages:
+   ```bash
+   nix-shell -p git vim
+   ```
 
-Then:
+2. Clone and enter the repository:
+   ```bash
+   cd && git clone https://github.com/crowquillx/tanosV3.git
+   cd tanos
+   ```
 
-![ZaneyOS Install Script Command](img/install-script.jpg)
+3. Create your host configuration:
+   ```bash
+   cp -r hosts/default hosts/<your-desired-hostname>
+   ```
 
-```
-sh <(curl -L https://raw.githubusercontent.com/crowquillx/tanosV3/refs/heads/main/install-tanos.sh)
-```
+4. Configure your system:
+   - Edit `hosts/<your-desired-hostname>/variables.nix`
+   - Edit `flake.nix` with your username, profile, and hostname
+   - Generate hardware configuration:
+     ```bash
+     nixos-generate-config --show-hardware-config > hosts/<your-desired-hostname>/hardware.nix
+     ```
 
-#### After the install completes, reboot.
+5. Enable flakes and install:
+   ```bash
+   NIX_CONFIG="experimental-features = nix-command flakes" 
+   sudo nixos-rebuild switch --flake .#profile
+   ```
 
-</details>
+> 💡 After installation, you can use the `fr` alias to rebuild your configuration from anywhere.
 
-<details>
-<summary><strong> 🦽 Manual install process:  </strong></summary>
+## 🙏 Special Thanks
 
-1. Run this command to ensure Git & Vim are installed:
-
-```
-nix-shell -p git vim
-```
-
-2. Clone this repo & enter it:
-
-```
-cd && git clone https://github.com/crowquillx/tanosV3.git
-cd tanos
-```
-
-- _You should stay in this folder for the rest of the install_
-
-3. Create the host folder for your machine(s) like so:
-
-```
-cp -r hosts/default hosts/<your-desired-hostname>
-```
-
-4. Edit `hosts/<your-desired-hostname>/variables.nix`.
-
-5. Edit `flake.nix` and fill in your username, profile, and hostname.
-
-6. Generate your hardware.nix like so:
-
-```
-nixos-generate-config --show-hardware-config > hosts/<your-desired-hostname>/hardware.nix
-```
-
-7. Run this to enable flakes and install the flake replacing hostname with
-   whatever you put as the hostname:
-
-```
-NIX_CONFIG="experimental-features = nix-command flakes" 
-sudo nixos-rebuild switch --flake .#profile
-```
-
-Now when you want to rebuild the configuration you have access to an alias
-called `fr` that will rebuild the flake and you do not have to be in the
-`tanos` folder for it to work.
-
-</details>
-
-
-### Special Recognitions:
- These are the credits from the zaneyos repo at the time of forking, plus zaney himself.
-
-- Tyler Kelley   https://gitlab.com/Zaney https://www.youtube.com/@ZaneyOG https://www.patreon.com/akazaney https://zaney.org/
-- Jakookit  https://github.com/jakookit
-- Justaguylinux   https://github.com/drewgrif
-- Jerry Starke    https://github.com/JerrySM64
+- [Tyler Kelley (Zaney)](https://gitlab.com/Zaney)
+  - [YouTube](https://www.youtube.com/@ZaneyOG)
+  - [Patreon](https://www.patreon.com/akazaney)
+  - [Website](https://zaney.org/)
+- [Jakookit](https://github.com/jakookit)
+- [Justaguylinux](https://github.com/drewgrif)
+- [Jerry Starke](https://github.com/JerrySM64)
