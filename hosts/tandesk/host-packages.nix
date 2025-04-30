@@ -14,5 +14,10 @@
     mkvtoolnix
     aegisub
     godot
+    heroic
+    lutris
+    protonup-qt
+    protontricks
+    brave
   ];
 }
