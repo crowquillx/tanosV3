@@ -10,7 +10,8 @@
     kittyEnable
     waybarChoice
     waybarEnable
-    zoxideEnable;
+    zoxideEnable
+    cosmicEnable;
 in {
   imports = [
     ./amfora.nix
@@ -19,6 +20,7 @@ in {
     ./bat.nix
     ./btop.nix
     ./cava.nix
+    ./cosmic
     ./emoji.nix
     ./fastfetch
     ./gh.nix
@@ -58,5 +60,6 @@ in {
     kittyEnable = kittyEnable;
     waybarEnable = waybarEnable;
     zoxideEnable = zoxideEnable;
+    cosmicEnable = cosmicEnable;
   };
 }

@@ -77,4 +77,6 @@ monitor=HDMI-A-1,disabled";
 
   # Set Waybar
   waybarChoice = "waybar-curved";
+
+  cosmicEnable = false; # Enable COSMIC desktop environment
 }
