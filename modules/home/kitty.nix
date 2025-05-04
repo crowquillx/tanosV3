@@ -1,6 +1,6 @@
-{pkgs, ...}: {
+{pkgs, host, kittyEnable, ...}: {
   programs.kitty = {
-    enable = true;
+    enable = kittyEnable;
     package = pkgs.kitty;
     settings = {
       font_size = 12;

@@ -1,5 +1,15 @@
-{host, ...}: let
-  inherit (import ../../hosts/${host}/variables.nix) waybarChoice;
+{ inputs, config, pkgs, host, ... }: let
+  inherit (import ../../hosts/${host}/variables.nix) 
+    ghosttyEnable
+    wlogoutEnable
+    hyprlandEnable
+    hyprlockEnable
+    hypridleEnable
+    nvfEnable
+    weztermEnable
+    kittyEnable
+    waybarChoice
+    zoxideEnable;
 in {
   imports = [
     ./amfora.nix
@@ -34,4 +44,17 @@ in {
     ./zoxide.nix
     ./zsh
   ];
+
+  # Pass variables to modules
+  _module.args = {
+    ghosttyEnable = ghosttyEnable;
+    wlogoutEnable = wlogoutEnable;
+    hyprlandEnable = hyprlandEnable;
+    hyprlockEnable = hyprlockEnable;
+    hypridleEnable = hypridleEnable;
+    nvfEnable = nvfEnable;
+    weztermEnable = weztermEnable;
+    kittyEnable = kittyEnable;
+    zoxideEnable = zoxideEnable;
+  };
 }

@@ -1,11 +1,13 @@
-{pkgs, ...}: {
+{ host, pkgs, ... }: let
+  inherit (import ../../hosts/${host}/variables.nix) flatpakEnable;
+in {
   xdg.portal = {
-    enable = true;
+    enable = flatpakEnable;
     extraPortals = [pkgs.xdg-desktop-portal-hyprland];
     configPackages = [pkgs.hyprland];
   };
   services = {
-    flatpak.enable = true; # Enable Flatpak
+    flatpak.enable = flatpakEnable; # Enable Flatpak
   };
   systemd.services.flatpak-repo = {
     wantedBy = ["multi-user.target"];

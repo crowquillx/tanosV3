@@ -1,10 +1,8 @@
-{
-  pkgs,
-  username,
-  ...
-}: {
+{ host, pkgs, username, ... }: let
+  inherit (import ../../hosts/${host}/variables.nix) greetdEnable;
+in {
   services.greetd = {
-    enable = true;
+    enable = greetdEnable;
     vt = 3;
     settings = {
       default_session = {

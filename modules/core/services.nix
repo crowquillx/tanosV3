@@ -1,23 +1,34 @@
-{profile, ...}: {
+{ host, profile, ... }: let
+  inherit (import ../../hosts/${host}/variables.nix) 
+    libinputEnable
+    fstrimEnable
+    gvfsEnable
+    opensshEnable
+    bluemanEnable
+    tumblerEnable
+    gnomeKeyringEnable
+    smartdEnable
+    pipewireEnable;
+in {
   # Services to start
   services = {
-    libinput.enable = true; # Input Handling
-    fstrim.enable = true; # SSD Optimizer
-    gvfs.enable = true; # For Mounting USB & More
-    openssh.enable = true; # Enable SSH
-    blueman.enable = true; # Bluetooth Support
-    tumbler.enable = true; # Image/video preview
-    gnome.gnome-keyring.enable = true;
+    libinput.enable = libinputEnable; # Input Handling
+    fstrim.enable = fstrimEnable; # SSD Optimizer
+    gvfs.enable = gvfsEnable; # For Mounting USB & More
+    openssh.enable = opensshEnable; # Enable SSH
+    blueman.enable = bluemanEnable; # Bluetooth Support
+    tumbler.enable = tumblerEnable; # Image/video preview
+    gnome.gnome-keyring.enable = gnomeKeyringEnable;
 
     smartd = {
       enable =
         if profile == "vm"
         then false
-        else true;
+        else smartdEnable;
       autodetect = true;
     };
     pipewire = {
-      enable = true;
+      enable = pipewireEnable;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;

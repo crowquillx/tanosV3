@@ -1,15 +1,17 @@
-{pkgs, ...}: {
+{ host, pkgs, ... }: let
+  inherit (import ../../hosts/${host}/variables.nix) steamEnable;
+in {
   programs = {
     steam = {
-      enable = true;
+      enable = steamEnable;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = false;
-      gamescopeSession.enable = true;
+      gamescopeSession.enable = steamEnable;
       extraCompatPackages = [pkgs.proton-ge-bin];
     };
-    gamemode.enable = true;
+    gamemode.enable = steamEnable;
     gamescope = {
-      enable = true;
+      enable = steamEnable;
       capSysNice = true;
       args = [
         "--rt"

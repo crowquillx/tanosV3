@@ -3,11 +3,13 @@
   host,
   ...
 }: let
-  inherit (import ../../hosts/${host}/variables.nix) stylixImage;
+  inherit (import ../../hosts/${host}/variables.nix) 
+    stylixEnable
+    stylixImage;
 in {
   # Styling Options
   stylix = {
-    enable = true;
+    enable = stylixEnable;
     #image = stylixImage;
     base16Scheme = {
       # TokyoNightStorm

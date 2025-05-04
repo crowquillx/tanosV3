@@ -1,12 +1,15 @@
 {
   inputs,
   config,
+  host,
+  pkgs,
+  nvfEnable,
   ...
 }: {
   imports = [inputs.nvf.homeManagerModules.default];
 
   programs.nvf = {
-    enable = true;
+    enable = nvfEnable;
 
     settings.vim = {
       vimAlias = true;

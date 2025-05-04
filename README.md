@@ -23,13 +23,13 @@
 
 1. Install required packages:
    ```bash
-   nix-shell -p git curl
-   ```
+nix-shell -p git curl
+```
 
 2. Run the installation script:
    ```bash
-   sh <(curl -L https://raw.githubusercontent.com/crowquillx/tanosV3/refs/heads/main/install-tanos.sh)
-   ```
+sh <(curl -L https://raw.githubusercontent.com/crowquillx/tanosV3/refs/heads/main/install-tanos.sh)
+```
 
 3. Reboot your system after installation completes
 
@@ -37,33 +37,33 @@
 
 1. Install required packages:
    ```bash
-   nix-shell -p git vim
-   ```
+nix-shell -p git vim
+```
 
 2. Clone and enter the repository:
    ```bash
-   cd && git clone https://github.com/crowquillx/tanosV3.git
-   cd tanos
-   ```
+cd && git clone https://github.com/crowquillx/tanosV3.git
+cd tanos
+```
 
 3. Create your host configuration:
    ```bash
-   cp -r hosts/default hosts/<your-desired-hostname>
-   ```
+cp -r hosts/default hosts/<your-desired-hostname>
+```
 
 4. Configure your system:
    - Edit `hosts/<your-desired-hostname>/variables.nix`
    - Edit `flake.nix` with your username, profile, and hostname
    - Generate hardware configuration:
      ```bash
-     nixos-generate-config --show-hardware-config > hosts/<your-desired-hostname>/hardware.nix
-     ```
+nixos-generate-config --show-hardware-config > hosts/<your-desired-hostname>/hardware.nix
+```
 
 5. Enable flakes and install:
    ```bash
-   NIX_CONFIG="experimental-features = nix-command flakes" 
-   sudo nixos-rebuild switch --flake .#profile
-   ```
+NIX_CONFIG="experimental-features = nix-command flakes" 
+sudo nixos-rebuild switch --flake .#profile
+```
 
 > 💡 After installation, you can use the `fr` alias to rebuild your configuration from anywhere.
 

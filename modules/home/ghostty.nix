@@ -1,6 +1,6 @@
-{pkgs, ...}: {
+{pkgs, ghosttyEnable, ...}: {
   programs.ghostty = {
-    enable = true;
+    enable = ghosttyEnable;
     package = pkgs.ghostty;
   };
   home.file."./.config/ghostty/config".text = ''

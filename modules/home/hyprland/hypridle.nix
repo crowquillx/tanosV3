@@ -1,9 +1,9 @@
-{ ... }:
-
-{
+{ host, ... }: let
+  inherit (import ../../../hosts/${host}/variables.nix) hypridleEnable;
+in {
   services = {
     hypridle = {
-      enable = true;
+      enable = hypridleEnable;
       settings = {
         general = {
           after_sleep_cmd = "hyprctl dispatch dpms on";

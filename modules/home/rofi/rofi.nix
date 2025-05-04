@@ -1,11 +1,9 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{ host, pkgs, config, ... }: let
+  inherit (import ../../../hosts/${host}/variables.nix) enableRofi;
+in {
   programs = {
     rofi = {
-      enable = true;
+      enable = enableRofi;
       package = pkgs.rofi-wayland;
       extraConfig = {
         modi = "drun,filebrowser,run";

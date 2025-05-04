@@ -45,4 +45,37 @@ monitor=HDMI-A-1,disabled";
 
   # Enable Thunar GUI File Manager
   thunarEnable = true;
+
+  # Enable Rofi
+  enableRofi = true;
+
+  # Core Module Enables
+  flatpakEnable = true;
+  greetdEnable = true;
+  steamEnable = true;
+  stylixEnable = true;
+  syncthingEnable = false;
+  xserverEnable = false;
+
+  # Service Enables
+  libinputEnable = true;
+  fstrimEnable = true;
+  gvfsEnable = true;
+  opensshEnable = true;
+  bluemanEnable = true;
+  tumblerEnable = true;
+  gnomeKeyringEnable = true;
+  smartdEnable = true;
+  pipewireEnable = true;
+
+  # Home Module Enables
+  ghosttyEnable = true;
+  wlogoutEnable = true;
+  hyprlandEnable = true;
+  hyprlockEnable = true;
+  hypridleEnable = true;
+  nvfEnable = true;
+  weztermEnable = false;
+  kittyEnable = true;
+  zoxideEnable = true;
 }

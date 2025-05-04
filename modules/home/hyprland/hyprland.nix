@@ -9,6 +9,7 @@
     extraMonitorSettings
     keyboardLayout
     stylixImage
+    hyprlandEnable
     ;
 in {
   home.packages = with pkgs; [
@@ -34,7 +35,7 @@ in {
     ".config/face.png".source = ./face.png;
   };
   wayland.windowManager.hyprland = {
-    enable = true;
+    enable = hyprlandEnable;
     package = pkgs.hyprland;
     systemd = {
       enable = true;

@@ -1,6 +1,8 @@
-{username, ...}: {
+{username, host, ...}: let
+  inherit (import ../../../hosts/${host}/variables.nix) hyprlockEnable;
+in {
   programs.hyprlock = {
-    enable = true;
+    enable = hyprlockEnable;
     settings = {
       general = {
         disable_loading_bar = true;

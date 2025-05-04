@@ -1,8 +1,8 @@
-{ config, ... }:
-
-{
+{ config, host, ... }: let
+  inherit (import ../../../hosts/${host}/variables.nix) wlogoutEnable;
+in {
   programs.wlogout = {
-    enable = true;
+    enable = wlogoutEnable;
     layout = [
       {
         label = "shutdown";
