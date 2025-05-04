@@ -3,6 +3,7 @@
   lib,
   host,
   config,
+  waybarEnable,
   ...
 }: let
   betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
@@ -11,7 +12,7 @@ in
   with lib; {
     # Configure & Theme Waybar
     programs.waybar = {
-      enable = true;
+      enable = waybarEnable;
       package = pkgs.waybar;
       settings = [
         {

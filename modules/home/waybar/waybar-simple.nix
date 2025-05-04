@@ -3,14 +3,16 @@
   lib,
   host,
   config,
+  waybarEnable,
   ...
 }: let
+  betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
   inherit (import ../../../hosts/${host}/variables.nix) clock24h;
 in
   with lib; {
     # Configure & Theme Waybar
     programs.waybar = {
-      enable = true;
+      enable = waybarEnable;
       package = pkgs.waybar;
       settings = [
         {
@@ -19,25 +21,18 @@ in
           modules-center = ["hyprland/workspaces"];
           modules-left = [
             "custom/startmenu"
-            "custom/arrow6"
+            "hyprland/window"
             "pulseaudio"
             "cpu"
             "memory"
             "idle_inhibitor"
-            "custom/arrow7"
-            "hyprland/window"
           ];
           modules-right = [
-            "custom/arrow4"
             "custom/hyprbindings"
-            "custom/arrow3"
             "custom/notification"
-            "custom/arrow3"
             "custom/exit"
             "battery"
-            "custom/arrow2"
             "tray"
-            "custom/arrow1"
             "clock"
           ];
 
@@ -183,121 +178,98 @@ in
             on-click = "";
             tooltip = false;
           };
-          "custom/arrow1" = {
-            format = "";
-          };
-          "custom/arrow2" = {
-            format = "";
-          };
-          "custom/arrow3" = {
-            format = "";
-          };
-          "custom/arrow4" = {
-            format = "";
-          };
-          "custom/arrow5" = {
-            format = "";
-          };
-          "custom/arrow6" = {
-            format = "";
-          };
-          "custom/arrow7" = {
-            format = "";
-          };
         }
       ];
       style = concatStrings [
         ''
           * {
             font-family: JetBrainsMono Nerd Font Mono;
-            font-size: 14px;
+            font-size: 16px;
             border-radius: 0px;
             border: none;
             min-height: 0px;
           }
           window#waybar {
-            background: #${config.lib.stylix.colors.base00};
-            color: #${config.lib.stylix.colors.base05};
+            background: rgba(0,0,0,0);
+          }
+          #workspaces {
+            color: #${config.lib.stylix.colors.base00};
+            background: #${config.lib.stylix.colors.base01};
+            margin: 4px 4px;
+            padding: 5px 5px;
+            border-radius: 16px;
           }
           #workspaces button {
+            font-weight: bold;
             padding: 0px 5px;
-            background: transparent;
-            color: #${config.lib.stylix.colors.base04};
+            margin: 0px 3px;
+            border-radius: 16px;
+            color: #${config.lib.stylix.colors.base00};
+            background: linear-gradient(45deg, #${config.lib.stylix.colors.base08}, #${config.lib.stylix.colors.base0D});
+            opacity: 0.5;
+            transition: ${betterTransition};
           }
           #workspaces button.active {
-            color: #${config.lib.stylix.colors.base08};
+            font-weight: bold;
+            padding: 0px 5px;
+            margin: 0px 3px;
+            border-radius: 16px;
+            color: #${config.lib.stylix.colors.base00};
+            background: linear-gradient(45deg, #${config.lib.stylix.colors.base08}, #${config.lib.stylix.colors.base0D});
+            transition: ${betterTransition};
+            opacity: 1.0;
+            min-width: 40px;
           }
           #workspaces button:hover {
-            color: #${config.lib.stylix.colors.base08};
+            font-weight: bold;
+            border-radius: 16px;
+            color: #${config.lib.stylix.colors.base00};
+            background: linear-gradient(45deg, #${config.lib.stylix.colors.base08}, #${config.lib.stylix.colors.base0D});
+            opacity: 0.8;
+            transition: ${betterTransition};
           }
           tooltip {
             background: #${config.lib.stylix.colors.base00};
-            border: 1px solid #${config.lib.stylix.colors.base05};
+            border: 1px solid #${config.lib.stylix.colors.base08};
             border-radius: 12px;
           }
           tooltip label {
-            color: #${config.lib.stylix.colors.base05};
+            color: #${config.lib.stylix.colors.base08};
           }
-          #window {
-            padding: 0px 10px;
-          }
-          #pulseaudio, #cpu, #memory, #idle_inhibitor {
-            padding: 0px 10px;
+          #window, #pulseaudio, #cpu, #memory, #idle_inhibitor {
+            font-weight: bold;
+            margin: 4px 0px;
+            margin-left: 7px;
+            padding: 0px 18px;
             background: #${config.lib.stylix.colors.base04};
             color: #${config.lib.stylix.colors.base00};
+            border-radius: 24px 10px 24px 10px;
           }
           #custom-startmenu {
-            color: #${config.lib.stylix.colors.base02};
-            padding: 0px 14px;
-            font-size: 20px;
-            background: #${config.lib.stylix.colors.base0B};
+            color: #${config.lib.stylix.colors.base0B};
+            background: #${config.lib.stylix.colors.base02};
+            font-size: 28px;
+            margin: 0px;
+            padding: 0px 30px 0px 15px;
+            border-radius: 0px 0px 40px 0px;
           }
           #custom-hyprbindings, #network, #battery,
-          #custom-notification, #custom-exit {
+          #custom-notification, #tray, #custom-exit {
+            font-weight: bold;
             background: #${config.lib.stylix.colors.base0F};
             color: #${config.lib.stylix.colors.base00};
-            padding: 0px 10px;
-          }
-          #tray {
-            background: #${config.lib.stylix.colors.base02};
-            color: #${config.lib.stylix.colors.base00};
-            padding: 0px 10px;
+            margin: 4px 0px;
+            margin-right: 7px;
+            border-radius: 10px 24px 10px 24px;
+            padding: 0px 18px;
           }
           #clock {
             font-weight: bold;
-            padding: 0px 10px;
-            color: #${config.lib.stylix.colors.base00};
-            background: #${config.lib.stylix.colors.base0E};
-          }
-          #custom-arrow1 {
-            font-size: 24px;
-            color: #${config.lib.stylix.colors.base0E};
-            background: #${config.lib.stylix.colors.base02};
-          }
-          #custom-arrow2 {
-            font-size: 24px;
-            color: #${config.lib.stylix.colors.base02};
-            background: #${config.lib.stylix.colors.base0F};
-          }
-          #custom-arrow3 {
-            font-size: 24px;
-            color: #${config.lib.stylix.colors.base00};
-            background: #${config.lib.stylix.colors.base0F};
-          }
-          #custom-arrow4 {
-            font-size: 24px;
-            color: #${config.lib.stylix.colors.base0F};
-            background: transparent;
-          }
-          #custom-arrow6 {
-            font-size: 24px;
-            color: #${config.lib.stylix.colors.base0B};
-            background: #${config.lib.stylix.colors.base04};
-          }
-          #custom-arrow7 {
-            font-size: 24px;
-            color: #${config.lib.stylix.colors.base04};
-            background: transparent;
+            color: #0D0E15;
+            background: linear-gradient(90deg, #${config.lib.stylix.colors.base0E}, #${config.lib.stylix.colors.base0C});
+            margin: 0px;
+            padding: 0px 15px 0px 30px;
+            border-radius: 0px 0px 0px 40px;
           }
         ''
       ];

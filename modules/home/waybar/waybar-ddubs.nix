@@ -3,6 +3,7 @@
   lib,
   host,
   config,
+  waybarEnable,
   ...
 }: let
   betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
@@ -11,7 +12,7 @@ in
   with lib; {
     # Configure & Theme Waybar
     programs.waybar = {
-      enable = true;
+      enable = waybarEnable;
       package = pkgs.waybar;
       settings = [
         {
@@ -120,9 +121,7 @@ in
           "custom/startmenu" = {
             tooltip = false;
             format = "";
-            # exec = "rofi -show drun";
-            #on-click = "sleep 0.1 && rofi-launcher";
-            on-click = "sleep 0.1 && nwg-drawer -mb 200 -mt 200 -mr 200 -ml 200";
+            on-click = "sleep 0.1 && rofi-launcher";
           };
           "custom/hyprbindings" = {
             tooltip = false;
@@ -185,7 +184,7 @@ in
         ''
           * {
             font-family: JetBrainsMono Nerd Font Mono;
-            font-size: 18px;
+            font-size: 16px;
             border-radius: 0px;
             border: none;
             min-height: 0px;
@@ -242,40 +241,35 @@ in
             margin: 4px 0px;
             margin-left: 7px;
             padding: 0px 18px;
-            background: #${config.lib.stylix.colors.base00};
-            color: #${config.lib.stylix.colors.base08};
-            border-radius: 8px 8px 8px 8px;
-          }
-          #idle_inhibitor {
-          font-size: 28px;
+            background: #${config.lib.stylix.colors.base04};
+            color: #${config.lib.stylix.colors.base00};
+            border-radius: 24px 10px 24px 10px;
           }
           #custom-startmenu {
             color: #${config.lib.stylix.colors.base0B};
             background: #${config.lib.stylix.colors.base02};
-            font-size: 22px;
+            font-size: 28px;
             margin: 0px;
-            padding: 0px 5px 0px 5px;
-            border-radius: 16px 16px 16px 16px;
+            padding: 0px 30px 0px 15px;
+            border-radius: 0px 0px 40px 0px;
           }
           #custom-hyprbindings, #network, #battery,
           #custom-notification, #tray, #custom-exit {
-            /* font-weight: bold; */
-            font-size: 20px;
-            background: #${config.lib.stylix.colors.base00};
-            color: #${config.lib.stylix.colors.base08};
+            font-weight: bold;
+            background: #${config.lib.stylix.colors.base0F};
+            color: #${config.lib.stylix.colors.base00};
             margin: 4px 0px;
             margin-right: 7px;
-            border-radius: 8px 8px 8px 8px;
+            border-radius: 10px 24px 10px 24px;
             padding: 0px 18px;
           }
           #clock {
             font-weight: bold;
-            font-size: 16px;
             color: #0D0E15;
-            background: linear-gradient(90deg, #${config.lib.stylix.colors.base0B}, #${config.lib.stylix.colors.base02});
+            background: linear-gradient(90deg, #${config.lib.stylix.colors.base0E}, #${config.lib.stylix.colors.base0C});
             margin: 0px;
-            padding: 0px 5px 0px 5px;
-            border-radius: 16px 16px 16px 16px;
+            padding: 0px 15px 0px 30px;
+            border-radius: 0px 0px 0px 40px;
           }
         ''
       ];

@@ -9,6 +9,7 @@
     weztermEnable
     kittyEnable
     waybarChoice
+    waybarEnable
     zoxideEnable;
 in {
   imports = [
@@ -36,7 +37,7 @@ in {
     ./swappy.nix
     ./swaync.nix
     ./virtmanager.nix
-    waybarChoice
+    ./waybar/waybar-ddubs.nix
     ./wezterm.nix
     ./wlogout
     ./xdg.nix
@@ -55,6 +56,7 @@ in {
     nvfEnable = nvfEnable;
     weztermEnable = weztermEnable;
     kittyEnable = kittyEnable;
+    waybarEnable = waybarEnable;
     zoxideEnable = zoxideEnable;
   };
 }

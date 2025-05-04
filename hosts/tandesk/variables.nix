@@ -32,10 +32,6 @@ monitor=HDMI-A-1,disabled";
   # Set Stylix Image
   stylixImage = ../../wallpapers/wp.png;
 
-  # Set Waybar
-  # Includes alternates such as waybar-curved.nix & waybar-ddubs.nix
-  waybarChoice = ../../modules/home/waybar/waybar-curved.nix;
-
   # Set Animation style
   # Available options are:
   # animations-def.nix  (default)
@@ -68,7 +64,6 @@ monitor=HDMI-A-1,disabled";
   smartdEnable = true;
   pipewireEnable = true;
 
-  # Home Module Enables
   ghosttyEnable = true;
   wlogoutEnable = true;
   hyprlandEnable = true;
@@ -78,4 +73,8 @@ monitor=HDMI-A-1,disabled";
   weztermEnable = false;
   kittyEnable = true;
   zoxideEnable = true;
+  waybarEnable = true;
+
+  # Set Waybar
+  waybarChoice = "waybar-curved";
 }
