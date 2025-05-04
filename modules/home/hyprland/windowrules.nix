@@ -77,6 +77,7 @@ in {
         "fullscreen, tag:games*"
         "workspace 2, title:^(Spotify)(.*)$"
         "workspace 3, class:^(vesktop)$"
+        "float, class:^([Tt]hunar)$"
       ];
 
       env = [

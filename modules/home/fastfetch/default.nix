@@ -14,8 +14,8 @@
       logo = {
         source = ./nixos2.png;
         type = "kitty-direct";
-        height = 10;
-        width = 20;
+        height = 20;
+        width = 35;
         padding = {
           top = 2;
           left = 2;
@@ -26,7 +26,7 @@
         "break"
         {
           type = "os";
-          key = "OS - tanOS";
+          key = "tanOS";
           keyColor = "31";
         }
         {

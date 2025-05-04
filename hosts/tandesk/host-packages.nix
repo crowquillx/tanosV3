@@ -19,5 +19,8 @@
     protonup-qt
     protontricks
     brave
+    qbittorrent
+    plex-desktop
+    openmw
   ];
 }
