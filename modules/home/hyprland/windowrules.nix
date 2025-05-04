@@ -7,8 +7,8 @@ in {
   wayland.windowManager.hyprland = {
     settings = {
       windowrulev2 = [
-        "tag +file-manager, class:^([Tt]hunar|org.gnome.Nautilus|[Pp]cmanfm-qt)$"
-        "tag +terminal, class:^(Alacritty|kitty|kitty-dropterm)$"
+        "tag +file-manager, class:^([Tt]hunar|org.gnome.Nautilus|[Pp]cmanfm-qt|org.kde.dolphin)$"
+        "tag +terminal, class:^(Alacritty|kitty|kitty-dropterm|[Gg]hostty)$"
         "tag +browser, class:^(Brave-browser(-beta|-dev|-unstable)?)$"
         "tag +browser, class:^([Ff]irefox|org.mozilla.firefox|[Ff]irefox-esr)$"
         "tag +browser, class:^([Gg]oogle-chrome(-beta|-dev|-unstable)?)$"
@@ -47,6 +47,7 @@ in {
         "idleinhibit fullscreen, title:^(*)$"
         "idleinhibit fullscreen, fullscreen:1"
         "float, tag:settings*"
+        "float, tag:file-manager*"
         "float, class:^([Ff]erdium)$"
         "float, title:^(Picture-in-Picture)$"
         "float, class:^(mpv|com.github.rafostar.Clapper)$"
@@ -77,7 +78,7 @@ in {
         "fullscreen, tag:games*"
         "workspace 2, title:^(Spotify)(.*)$"
         "workspace 3, class:^(vesktop)$"
-        "float, class:^([Tt]hunar)$"
+        "size 50% 50%, tag:file-manager*"
       ];
 
       env = [
