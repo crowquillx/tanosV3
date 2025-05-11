@@ -1,10 +1,14 @@
-{pkgs, inputs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     audacity
     vesktop
     nodejs
     obs-studio
-    code-cursor
+    vscode-fhs
     direnv
     inputs.zen-browser.packages."${system}".default
     spotify
@@ -22,5 +26,6 @@
     qbittorrent
     plex-desktop
     openmw
+    bzip2
   ];
 }
