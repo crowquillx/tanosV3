@@ -27,6 +27,7 @@
     qbittorrent
     plex-desktop
     openmw
+    hydralauncher
     bzip2
   ];
 }

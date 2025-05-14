@@ -19,6 +19,7 @@
         "text/x-ssa" = [ "aegisub.desktop" ];
         "text/x-ass" = [ "aegisub.desktop" ];
         "application/vnd.microsoft.portable-executable" = [ "ru.linux_gaming.PortProton.desktop" "protontricks-launch.desktop" ];
+        "application/x-msdownload" = [ "ru.linux_gaming.PortProton.desktop" ];
         "text/plain" = [ "org.gnome.gedit.desktop" ];
       };
       defaultApplications = {
