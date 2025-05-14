@@ -18,6 +18,8 @@
         "application/x-subrip" = [ "aegisub.desktop" ];
         "text/x-ssa" = [ "aegisub.desktop" ];
         "text/x-ass" = [ "aegisub.desktop" ];
+        "application/vnd.microsoft.portable-executable" = [ "ru.linux_gaming.PortProton.desktop" "protontricks-launch.desktop" ];
+        "text/plain" = [ "org.gnome.gedit.desktop" ];
       };
       defaultApplications = {
         "x-scheme-handler/http" = [ "zen-beta.desktop" ];
@@ -33,6 +35,7 @@
         "application/x-subrip" = [ "aegisub.desktop" ];
         "text/x-ssa" = [ "aegisub.desktop" ];
         "text/x-ass" = [ "aegisub.desktop" ];
+        "x-scheme-handler/discord" = [ "vesktop.desktop" ];
       };
     };
     portal = {

@@ -30,6 +30,12 @@
       fsType = "ext4";
     };
 
+    fileSystems."/home/tan/mnt/hdd" =
+    { device = "/dev/disk/by-uuid/D8F86463F86441BC";
+      fsType = "ntfs";
+      options = [ "rw" "uid=1000" "gid=1000" ];
+    };
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

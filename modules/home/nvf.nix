@@ -15,7 +15,6 @@
       vimAlias = true;
       viAlias = true;
       withNodeJs = true;
-      useSystemClipboard = true;
 
       options = {
         tabstop = 2;

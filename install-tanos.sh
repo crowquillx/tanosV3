@@ -70,7 +70,7 @@ fi
 echo "-----"
 
 echo "Cloning & Entering tanOS Repository"
-git clone https://github.com/crowquillx/tanosV3.git
+git clone https://github.com/crowquillx/tanosV3.git tanos
 cd tanos || exit
 mkdir hosts/"$hostName"
 cp hosts/default/*.nix hosts/"$hostName"
