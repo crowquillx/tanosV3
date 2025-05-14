@@ -17,6 +17,7 @@ in {
       "$modifier,Z,exec,zen-beta"
       ",Print,exec,screenshootin"
       "$modifier,D,exec,rofi-launcher"
+      "$modifier,V,exec,kitty --class clipse -e clipse"
       "$modifier,C,exec,hyprpicker -a"
       "$modifier,G,exec,gimp"
       "$modifier,T,exec,pypr toggle term"

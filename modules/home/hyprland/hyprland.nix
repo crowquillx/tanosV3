@@ -17,6 +17,8 @@ in {
     grim
     slurp
     wl-clipboard
+    clipse
+    wl-clip-persist
     swappy
     ydotool
     hyprpolkitagent
@@ -55,7 +57,8 @@ in {
         "killall -q swaync;sleep .5 && swaync"
         "nm-applet --indicator"
         "pypr &"
-        "sleep 1.5 && swww img ${stylixImage}"
+        "exec-once = clipse -listen"
+        "sleep 1.5 && wallsetter"
         "vesktop --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland"
         "spotify --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland"
       ];
