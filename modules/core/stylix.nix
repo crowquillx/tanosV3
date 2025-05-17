@@ -12,29 +12,29 @@ in {
     enable = stylixEnable;
     #image = stylixImage;
     base16Scheme = {
-      # TokyoNightStorm
-      base00 = "24283B";
-      base01 = "16161E";
-      base02 = "343A52";
-      base03 = "444B6A";
-      base04 = "787C99";
-      base05 = "A9B1D6";
-      base06 = "CBCCD1";
-      base07 = "D5D6DB";
-      base08 = "C0CAF5";
-      base09 = "A9B1D6";
-      base0A = "0DB9D7";
-      base0B = "9ECE6A";
-      base0C = "B4F9F8";
-      base0D = "2AC3DE";
-      base0E = "BB9AF7";
-      base0F = "F7768E";
+      # rose pine moon
+      base00 = "232136";
+      base01 = "2a273f";
+      base02 = "393552";
+      base03 = "6e6a86";
+      base04 = "908caa";
+      base05 = "e0def4";
+      base06 = "e0def4";
+      base07 = "56526e";
+      base08 = "eb6f92";
+      base09 = "f6c177";
+      base0A = "ea9a97";
+      base0B = "3e8fb0";
+      base0C = "9ccfd8";
+      base0D = "c4a7e7";
+      base0E = "f6c177";
+      base0F = "56526e";
     };
     polarity = "dark";
     opacity.terminal = 1.0;
     cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
+      package = pkgs.rose-pine-cursor;
+      name = "BreezeX-RosePine-Linux";
       size = 24;
     };
     fonts = {
