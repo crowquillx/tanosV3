@@ -20,9 +20,13 @@
       url = "github:Mic92/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {nixpkgs, lanzaboote, nix-ld, ...} @ inputs: let
+  outputs = {nixpkgs, lanzaboote, nix-ld, lix-module, ...} @ inputs: let
     system = "x86_64-linux";
     host = "tandesk";
     profile = "amd";
@@ -40,6 +44,7 @@
         };
         modules = [
           ./profiles/amd
+          lix-module.nixosModules.default
           lanzaboote.nixosModules.lanzaboote
            nix-ld.nixosModules.nix-ld
           { programs.nix-ld.dev.enable = true; }
