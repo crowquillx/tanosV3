@@ -29,5 +29,7 @@
     openmw
     hydralauncher
     bzip2
+    nixfmt-rfc-style
+    nil
   ];
 }
