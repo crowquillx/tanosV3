@@ -78,6 +78,7 @@ in {
         "fullscreen, tag:games*"
         "workspace 2, title:^(Spotify)(.*)$"
         "workspace 3, class:^(vesktop)$"
+        "workspace 3, class:^(swaync)$"
         "size 50% 50%, tag:file-manager*"
         "float, class:(clipse)"
         "size 622 652, class:(clipse)"

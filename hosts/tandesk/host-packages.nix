@@ -9,7 +9,6 @@
     nodejs
     obs-studio
     vscode-fhs
-    windsurf
     direnv
     inputs.zen-browser.packages."${system}".default
     spotify
