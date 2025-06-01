@@ -8,7 +8,7 @@
     (import ../../../hosts/${host}/variables.nix)
     extraMonitorSettings
     keyboardLayout
-    stylixImage
+    #stylixImage
     hyprlandEnable
     ;
 in {

@@ -14,7 +14,6 @@
     spotify
     blender
     devenv
-    vivaldi
     mkvtoolnix
     aegisub
     godot
@@ -30,5 +29,8 @@
     bzip2
     nixfmt-rfc-style
     nil
+    vlc
+    kdePackages.ark
+    kdePackages.dolphin
   ];
 }
