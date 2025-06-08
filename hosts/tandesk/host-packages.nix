@@ -30,7 +30,7 @@
     nixfmt-rfc-style
     nil
     vlc
-    kdePackages.ark
-    kdePackages.dolphin
+    #kdePackages.ark
+    #kdePackages.dolphin
   ];
 }
