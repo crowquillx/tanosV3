@@ -23,14 +23,17 @@
     protontricks
     brave
     qbittorrent
-    plex-desktop
     openmw
     hydralauncher
     bzip2
     nixfmt-rfc-style
     nil
     vlc
+    (xivlauncher-rb.override { useGameMode = true; })
     #kdePackages.ark
     #kdePackages.dolphin
+    winetricks
+    wine
+    jellyfin-media-player
   ];
 }
