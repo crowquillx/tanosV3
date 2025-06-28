@@ -83,6 +83,19 @@ in {
         "float, class:(clipse)"
         "size 622 652, class:(clipse)"
         "stayfocused, class:(clipse)"
+        "tag +poe, title:(Path of Exile)"
+        "tag +poe, class:(steam_app_238960)"
+        "fullscreen, tag:poe"
+        "tag +apt, title:(Awakened PoE Trade)"
+        "float, tag:apt"
+        "noblur, tag:apt"
+        "nofocus, tag:apt"
+        "noshadow, tag:apt"
+        "noborder, tag:apt"
+        "pin, tag:apt"
+        "renderunfocused, tag:apt"
+        "size 100% 100%, tag:apt"
+        "center, tag:apt"
       ];
 
       env = [
