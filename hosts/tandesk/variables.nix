@@ -5,8 +5,8 @@
 
   # Hyprland Settings
   extraMonitorSettings = "
-monitor=DP-1,2560x1440@165,2560x1080,auto,vrr,1
-monitor=DP-2,2560x1440@144,0x1080,auto
+monitor=DP-1,2560x1440@180,2560x1080,auto,vrr,3
+monitor=DP-2,2560x1440@165,0x1080,auto
 monitor=DP-3,1920x1080@144,2560x0,auto
 monitor=HDMI-A-1,disabled";
 

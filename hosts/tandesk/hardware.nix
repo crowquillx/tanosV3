@@ -12,10 +12,9 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.supportedFilesystems = [ "ntfs" "ntfs3g" ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/0a623ef8-8a9a-4fb6-bca4-f74c8566bd90";
+    { device = "/dev/disk/by-uuid/cbc9ea22-9357-4e86-bc85-19bec4ca5249";
       fsType = "ext4";
     };
 
@@ -30,12 +29,11 @@
       fsType = "ext4";
     };
 
-    fileSystems."/home/tan/mnt/hdd" =
+  fileSystems."/home/tan/mnt/hdd" =
     { device = "/dev/disk/by-uuid/D8F86463F86441BC";
       fsType = "ntfs";
       options = [ "rw" "uid=1000" "gid=1000" ];
     };
-
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

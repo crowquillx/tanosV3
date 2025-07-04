@@ -33,7 +33,7 @@
   outputs = {nixpkgs, lanzaboote, nix-ld, lix-module, nixos-xivlauncher-rb, ...} @ inputs: let
     system = "x86_64-linux";
     host = "tandesk";
-    profile = "amd";
+    profile = "nvidia";
     username = "tan";
   in {
     nixosConfigurations = {
@@ -64,7 +64,14 @@
           inherit profile;
           lanzaboote = lanzaboote;
         };
-        modules = [./profiles/nvidia];
+        modules = [
+          ./profiles/nvidia
+          lix-module.nixosModules.default
+          lanzaboote.nixosModules.lanzaboote
+          nix-ld.nixosModules.nix-ld
+          { programs.nix-ld.dev.enable = true; }
+          nixos-xivlauncher-rb.nixosModules.default
+          ];
       };
       nvidia-laptop = nixpkgs.lib.nixosSystem {
         inherit system;

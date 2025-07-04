@@ -3,7 +3,7 @@
 {
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
-    kernelModules = [ "v4l2loopback" ];
+    kernelModules = [ "v4l2loopback" "nvidia" "i915" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     kernel.sysctl = { "vm.max_map_count" = 2147483642; };
     loader.systemd-boot.enable = lib.mkForce false; # Lanzaboote manages systemd-boot
